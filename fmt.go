@@ -2,6 +2,38 @@ package main
 
 import "fmt"
 
+const One = 1
+
+func one() (int, int) {
+	const two = 2
+	return One, two
+}
+
+func main() {
+	x, y := one()
+	fmt.Printf("x=%d,y=%d", x, y)
+}
+
+/*
+func integers() func() int {
+	i := 0
+	return func() int {
+		i++
+		return i
+	}
+}
+func main() {
+	ints := integers()
+
+	fmt.Println(ints())
+	fmt.Println(ints())
+	fmt.Println(ints())
+
+	otherInts := integers()
+	fmt.Println(otherInts())
+}
+
+
 func later() func(string) string {
 	var store string
 
@@ -19,7 +51,7 @@ func main() {
 	fmt.Println(f("awesome"))
 }
 
-/*
+
 var n = 100
 var c = complex(1.0, 3)
 var a =[5]int{1,2,3,4,5}

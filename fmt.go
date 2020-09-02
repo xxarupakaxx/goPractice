@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 /*
 var n = 100
 var c = complex(1.0, 3)
@@ -28,7 +26,7 @@ var x,y,z int
 var {
 	x, y int
 	name string
-}*/
+}
 
 func div(x, y int) (int, int) {
 	q := x / y
@@ -39,3 +37,12 @@ func main() {
 	q, r := div(19, 7)
 	fmt.Printf("%d,%d\n", q, r)
 }
+
+func callFunction(f func()) {
+	f()
+}
+
+func main() {
+	callFunction(func())
+	fmt.Printf("im a function")
+}*/

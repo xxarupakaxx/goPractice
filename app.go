@@ -1,30 +1,11 @@
 package main
 
-
+import "fmt"
 
 func main() {
-	import "fmt"
+	fruits := [3]string{"apple", "baana", "cherry"}
 
-	
-	var i = 0
-	for {
-		fmt.println(i)
-		i++
-		if i == 10 {
-			break
-		}
+	for i, s := range fruits {
+		fmt.Printf("fruits[%d]=%s\n", i, s)
 	}
 }
-
-/*
-func appName() string {
-	const A = "GO Application"
-	var Version = "1.0"
-	return A + " " + Version
-}
-
-func main() {
-	fmt.Println(appName())
-
-}
-*/

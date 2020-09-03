@@ -3,8 +3,12 @@ package main
 import "fmt"
 
 func main() {
-	defer println("112")
+	defer func() {
+		if x := recover(); x != nil {
+			fmt.Println(x)
+		}
+	}()
+	panic("panic")
 
-	panic("runtime error")
-	fmt.Println("hee")
+	fmt.Println("jhe")
 }

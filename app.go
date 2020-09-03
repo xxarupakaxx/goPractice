@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
-	"runtime"
 )
 
 func main() {
-	go fmt.Println("hello")
-	fmt.Printf("NumCPU: %d\n", runtime.NumCPU())
-	fmt.Printf("NumGoroutine: %d\n", runtime.NumGoroutine())
-	fmt.Printf("Version: %d\n", runtime.Version())
+	s := []int{1, 2, 3}
+	s = append(s, 4)
+	fmt.Println(s)
+	s = append(s, 5, 6)
+	fmt.Println(s)
 }

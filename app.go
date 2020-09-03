@@ -2,17 +2,23 @@ package main
 
 import "fmt"
 
+func receiver(ch <-chan int) {
+	for {
+		i := <-ch
+		fmt.Println(i)
+	}
+}
+
 func main() {
-	m := map[string]int{
-		"Apple":  88,
-		"Banana": 107,
-		"vherry": 46,
+
+	ch := make(chan int)
+
+	go receiver(ch)
+
+	i := 0
+	for i < 10 {
+		ch <- i
+		i++
 	}
-	m["Grape"] = 66
-	m["Lemon"] = 16
-	m["Orange"] = 44
-	m["Oineapple"] = 73
-	for k, v := range m {
-		fmt.Printf("%v => %v\n", k, v)
-	}
+
 }

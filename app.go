@@ -2,12 +2,9 @@ package main
 
 import "fmt"
 
-func runDefer() {
-	defer fmt.Println("defer")
-	fmt.Println("de")
-}
-
 func main() {
-	runDefer()
+	defer println("112")
 
+	panic("runtime error")
+	fmt.Println("hee")
 }

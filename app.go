@@ -3,12 +3,6 @@ package main
 import "fmt"
 
 func main() {
-	m := make(map[int]string)
-
-	m[1] = "US"
-	m[81] = "Japan"
-	m[86] = "China"
-
+	m := map[int]string{1: "Taro", 2: "Hanako", 3: "jiro"}
 	fmt.Println(m)
-
 }

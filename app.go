@@ -1,28 +1,13 @@
 package main
 
-import "fmt"
-
-func testRecover(src interface{}) {
-	defer func() {
-		if x := recover(); x != nil {
-			switch v := x.(type) {
-			case int:
-				fmt.Printf("panic: int= %v\n", v)
-			case string:
-				fmt.Printf("panic: string= %v\n", v)
-			default:
-				fmt.Printf("panic unknown")
-			}
-		}
-
-	}()
-	panic(src)
-	return
-}
+import (
+	"fmt"
+	"runtime"
+)
 
 func main() {
-	testRecover(128)
-	testRecover("hogehoge")
-	testRecover([...]int{1, 2, 3})
-
+	go fmt.Println("hello")
+	fmt.Printf("NumCPU: %d\n", runtime.NumCPU())
+	fmt.Printf("NumGoroutine: %d\n", runtime.NumGoroutine())
+	fmt.Printf("Version: %d\n", runtime.Version())
 }

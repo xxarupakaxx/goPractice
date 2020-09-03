@@ -5,9 +5,10 @@ import (
 )
 
 func main() {
-	s := []int{1, 2, 3}
-	s = append(s, 4)
-	fmt.Println(s)
-	s = append(s, 5, 6)
-	fmt.Println(s)
+	s := make([]int, 0, 0)
+	fmt.Printf("len = %d , cap = %d\n", len(s), cap(s))
+	s = append(s, 1)
+	fmt.Printf("len = %d , cap = %d\n", len(s), cap(s))
+	s = append(s, []int{2, 3, 4}...)
+	fmt.Printf("len = %d , cap = %d\n", len(s), cap(s))
 }

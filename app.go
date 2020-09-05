@@ -3,8 +3,14 @@ package main
 import "fmt"
 
 func main() {
-	i := 5
-	ip := &i
-	fmt.Printf("type = %T, address = %p\n", ip, ip)
+	fmt.Println("hello")
+
+	s := ""
+	for _, v := range []string{"A", "B", "C"} {
+		s += v
+
+	}
+
+	fmt.Println(s)
 
 }

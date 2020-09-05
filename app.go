@@ -3,14 +3,11 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("hello")
+	type MyInt int
 
-	s := ""
-	for _, v := range []string{"A", "B", "C"} {
-		s += v
-
-	}
-
-	fmt.Println(s)
+	var n1 MyInt = 5
+	n2 := MyInt(7)
+	fmt.Println(n1)
+	fmt.Println(n2)
 
 }

@@ -1,15 +1,15 @@
 package main
 
-import "fmt"
-
 type Person struct {
-	Id int
+	Id   int
 	Name string
 	Area string
 }
 
-p := new(Person)
+func main() {
+	p := new(Person)
 
-p.Id
-p.Name
-p.Area
+	p.Id
+	p.Name
+	p.Area
+}

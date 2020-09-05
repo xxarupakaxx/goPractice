@@ -3,9 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	var i int
-	p := &i
-	fmt.Printf("%T\n", p)
-	pp := &p
-	fmt.Printf("%T\n", pp)
+	i := 5
+	ip := &i
+	fmt.Printf("type = %T, address = %p\n", ip, ip)
+
 }

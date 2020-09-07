@@ -1,15 +1,14 @@
 package main
 
-type Person struct {
-	Id   int
-	Name string
-	Area string
+import "fmt"
+
+type Point struct{ x, y int }
+
+func (p *point) Render() {
+	fmt.Printf("<%v,%v>\n", p.X, p.Y)
 }
-
 func main() {
-	p := new(Person)
+	p := &Point{X: 5, Y: 12}
 
-	p.Id
-	p.Name
-	p.Area
+	p.Render()
 }

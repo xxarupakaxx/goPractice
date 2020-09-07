@@ -2,13 +2,15 @@ package main
 
 import "fmt"
 
-type Point struct{ x, y int }
-
-func (p *point) Render() {
-	fmt.Printf("<%v,%v>\n", p.X, p.Y)
+type MyStrict struct {
+	a    string
+	b, c int
 }
-func main() {
-	p := &Point{X: 5, Y: 12}
 
-	p.Render()
+func main() {
+	var st MyStrict
+	st.a = "hoge"
+	st.b = 1
+	st.c = 0
+	fmt.Println(st.a, st.b, st.c)
 }

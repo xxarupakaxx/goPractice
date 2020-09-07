@@ -1,16 +1,20 @@
 package main
 
 import "fmt"
+import "reflect"
 
-type MyStrict struct {
-	a    string
-	b, c int
+
+type MyStruct struct {
+	a string 'tag1:"value1" tag2:"value2"'
+	b int 'tag3:"value3"'
 }
 
-func main() {
-	var st MyStrict
-	st.a = "hoge"
-	st.b = 1
-	st.c = 0
-	fmt.Println(st.a, st.b, st.c)
+func main (){
+	var st MyStruct
+	field1 := reflect.TypeOf(st).Field(0)
+	field2 := reflect.TypeOf(st).Field(1)
+	fmt.Println(field1.Tag.Get("tag1"))
+	fmt.Println(field2.Tag.Get("tag3"))
+	
+
 }

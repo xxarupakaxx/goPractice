@@ -1,5 +1,5 @@
 package main
 
-func appName() string {
+func App() string {
 	return "Zoo Application"
 }

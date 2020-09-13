@@ -15,8 +15,16 @@ func (p *Point) Distance(dp *Point) float64 {
 	x, y := p.X-dp.X, p.Y-dp.Y
 	return math.Sqrt(float64(x*x + y*y))
 }
-func main() {
-	p := Point{1, 2}
-	fmt.Println(p.Distance(&Point{0, 0}))
+func (p *Point) ToString() string {
+	return fmt.Sprintf("%d,%d", p.X, p.Y)
+}
 
+type MyInt int
+
+func (m MyInt) Pluse(i int) int {
+	return int(m) + 1
+}
+func main() {
+	f := (*Point).ToString
+	f(&Point{7, 11})
 }

@@ -21,6 +21,12 @@ func (p *Point) ToString() string {
 
 type MyInt int
 
+func (p Point) Set(x, y int) {
+	p.X = x
+	p.Y = y
+
+}
+
 func (m MyInt) Pluse(i int) int {
 	return int(m) + 1
 }

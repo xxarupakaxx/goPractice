@@ -4,7 +4,17 @@ import (
 	"fmt"
 	"math"
 )
-
+type MyError struct{
+	Message string
+	ErrCode int
+}
+func (e *MyError) Error() string {
+	return e.Message
+}
+func RaiseError()error{
+	return MyError{Message:"error",ErrCode:1234}
+}
+err
 type User struct {
 	Id   int    "ユーザー"
 	Name string "名前"

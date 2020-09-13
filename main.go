@@ -5,6 +5,12 @@ import (
 	"math"
 )
 
+type User struct {
+	Id   int    "ユーザー"
+	Name string "名前"
+	Age  uint   "年齢"
+}
+
 func showStruct(s struct{ X, Y int }) {
 	fmt.Println(s)
 }
@@ -31,6 +37,5 @@ func (m MyInt) Pluse(i int) int {
 	return int(m) + 1
 }
 func main() {
-	f := (*Point).ToString
-	f(&Point{7, 11})
+
 }
